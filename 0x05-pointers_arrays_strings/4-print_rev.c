@@ -13,6 +13,9 @@ void print_rev(char *s)
 	{
 		i++;
 	}
+
+	i--;  /* Go to the character before the null character*/
+
 	while (i > 0)
 	{
 		_putchar(s[i]);
