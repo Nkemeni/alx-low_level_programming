@@ -30,23 +30,24 @@ int _strlen(char *s)
  */
 char *_strdup(char *str)
 {
-	int len;
-	int i;
-	char *ptr;
-
-	len = _strlen(str);
-	ptr = malloc((len * sizeof(char)) + 1);
-
-	if (ptr != NULL)
+	if (str != NULL)
 	{
-		for (i = 0; i < len; i++)
+		int len;
+		int i;
+		char *ptr;
+		len = _strlen(str);
+		ptr = malloc((len * sizeof(char)) + 1);
+
+		if (ptr != NULL)
 		{
-			*(ptr + i) = *(str + i);
+			for (i = 0; i < len; i++)
+			{
+				*(ptr + i) = *(str + i);
+			}
+			*(ptr + len) = *(str + len);
 		}
-		*(ptr + len) = *(str + len);
+		return (ptr);
 	}
 
-	return (ptr);
+	return (NULL);
 }
-
-
