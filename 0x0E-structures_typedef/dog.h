@@ -25,9 +25,9 @@ typedef struct dog dog_t;
 /**
  * init_dog - initializes a variable of type dog
  * @d: pointer to type struct dog
- * @name: pointer to the name of the dog
+ * @name: the name of the dog
  * @age: age of the dog
- * @owner: pointer to the name of the owner of the dog
+ * @owner: the name of the owner of the dog
  */
 void init_dog(struct dog *d, char *name, float age, char *owner);
 
@@ -39,6 +39,17 @@ void init_dog(struct dog *d, char *name, float age, char *owner);
  * Description: if an element of d is NULL, print nil in its place
  */
 void print_dog(struct dog *d);
+
+
+/**
+ * new_dog - creates a new dog
+ * @name: name of the dog
+ * @age: age of the dog
+ * @owner: name of the owner of the dog
+ *
+ * Return: a pointer to the new dog created on sucess and NULL on failure
+ */
+dog_t *new_dog(char *name, float age, char *owner);
 
 
 
