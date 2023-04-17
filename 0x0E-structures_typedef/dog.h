@@ -15,6 +15,13 @@ struct dog
 	char *owner;
 };
 
+
+/**
+ * dog_t - typedef for struct dog
+ */
+typedef struct dog dog_t;
+
+
 /**
  * init_dog - initializes a variable of type dog
  * @d: pointer to type struct dog
