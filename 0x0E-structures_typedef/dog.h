@@ -52,6 +52,10 @@ void print_dog(struct dog *d);
 dog_t *new_dog(char *name, float age, char *owner);
 
 
-
+/**
+ * free_dog - frees struct dog
+ * @d: pointer to struct dog that needs to be freed
+ */
+void free_dog(dog_t *d);
 
 #endif
