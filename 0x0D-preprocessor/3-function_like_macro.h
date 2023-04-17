@@ -1,6 +1,6 @@
 #ifndef main_h
 #define main_h
 
-#define ABS(X) ((X) > 0 ? (X) : (-X))
+#define ABS(x) ((x) > 0 ? (x) : (-x))
 
 #endif
