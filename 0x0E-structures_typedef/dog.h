@@ -25,6 +25,15 @@ struct dog
 void init_dog(struct dog *d, char *name, float age, char *owner);
 
 
+/**
+ * print_dog - prints a the values of the different members of a struct dog
+ * @d: pointer to struct dog
+ *
+ * Description: if an element of d is NULL, print nil in its place
+ */
+void print_dog(struct dog *d);
+
+
 
 
 #endif
