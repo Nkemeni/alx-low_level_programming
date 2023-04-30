@@ -1,43 +1,57 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <stdio.h> /* printf */
+#include <stdlib.h> /* atoi */
+#include <stdbool.h> /* bool data type */
+
 /**
- * main - program execution begins here.
- * the program adds positive integer numbers received from the commandline
- * and prints the result followed by a newline
- * prints Error followed by a newline if one of the arguments is not a number
- * @argc: number of command line arguments
- * @argv: pointer to strings passed on the command line
- *
- * Return: (0) on success
+ * is_num - iterate through each argv to test if it's a number
+ * @argvv: a argv
+ * Return: true only if entire string is a number, false if not
  */
 
+bool is_num(char *argvv)
+{
+	int j = 0;
+
+	for (j = 0; argvv[j]; j++)
+	{
+		if (!(argvv[j] >= '0' && argvv[j] <= '9'))
+			return (0);
+	}
+	return (1);
+}
+
+/**
+ * main - print sum if all arguments given are numbers
+ * @argc: argument counter
+ * @argv: arguments
+ * Return: 0 on success, 1 if an argument wasn't a number
+ */
 
 int main(int argc, char *argv[])
 {
-	int sum;
-	int i;
+	int i = 1;
+	int sum = 0;
 
-	sum = 0;
-	i = 0;
-	if (argc > 1)
-	{
-		for (i = 1; i < argc;  i++)
-		{
-			if (atoi(argv[i]) == 0)
-			{
-				printf("Error\n");
-				return (1);
-			}
-			
-			sum = sum +  atoi(argv[i]);
-		}
-		printf("%d\n", sum);
-	}
+	/* validate input */
 	if (argc == 1)
 	{
-		printf("%d\n", sum);
+		printf("0\n");
+		return (0);
 	}
 
+	/* check all arguments to add numbers */
+	while (i < argc)
+	{
+		if (is_num(argv[i]))
+			sum += atoi(argv[i]);
+		else
+		{
+			printf("Error\n");
+			return (1);
+		}
+		i++;
+	}
+	printf("%d\n", sum);
+
 	return (0);
-}
-	
+}	
